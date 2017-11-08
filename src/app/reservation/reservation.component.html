@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="display-4">Reservation Details</div>
+      <div class="form-check form-check-inline">
+        <label class="form-check-label">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Walk in
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <label class="form-check-label">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Phone Reservation
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <label class="form-check-label">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> Online Reservation
+        </label>
+      </div>
+
+      <form class="container" id="needs-validation" novalidate>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="validationCustom01">Customer Name</label>
+            <input type="text" class="form-control" id="validationCustom01" placeholder="First name" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="validationCustom03">Customer Email</label>
+            <input type="text" class="form-control" id="validationCustom03" placeholder="Email" required>
+            <div class="invalid-feedback">
+              Please provide a valid email id.
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="validationCustom04">Table No.</label>
+            <input type="text" class="form-control" id="validationCustom04" placeholder="Table No." required>
+            <div class="invalid-feedback">
+              Please provide a Table No.
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="validationCustom05">No. Of Guests</label>
+            <input type="text" class="form-control" id="validationCustom05" placeholder="Guest Count" required>
+            <div class="invalid-feedback">
+              Please provide a valid zip.
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Submit form</button>
+      </form>
+    </div>
+  </div>
+</div>
