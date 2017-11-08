@@ -1,3 +1,38 @@
-<p>
-  settings works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+      <ul class="list-group">
+        <li *ngFor="let table of tablesList" [ngClass]="{'active': selectedTable == table && isEditView == true}" class="list-group-item"
+          (click)="showTableDetails($event, table)">
+          Table {{table.tableNumber}}
+          <span class="badge badge-secondary"> 2 - {{table.capacity}}</span>
+      </ul>
+    </div>
+    <div *ngIf="!isEditView" class="col-9">
+      <input [(ngModel)]="newTableNum" placeholder="Table No."/>
+      <input [(ngModel)]="newTableSec" placeholder="Section"/>
+      <input [(ngModel)]="newTableCap" placeholder="Table Capacity"/>
+      <button class="button btn-secondary" (click)="addTable(newTableNum, newTableSec, newTableCap)">
+        Add Table
+      </button>
+    </div>
+    <div *ngIf="isEditView && !editClicked" class="col-9">
+      <h3>Table Details</h3>
+      <div>Table {{selectedTable.tableNumber}} selected</div>
+      <div>Table is in {{selectedTable.section}} section</div>
+      <div>Table Capacity is {{selectedTable.capacity}}</div>
+      <button class="button btn-secondary" (click)="editTable()">Edit Details</button>
+    </div>
+    <div *ngIf="isEditView && editClicked" class="col-9">
+      <h3>Table Details</h3>
+      <div class="row">
+        <div class="col-12">
+          <input [(ngModel)]="selectedTable.tableNumber" />
+          <input [(ngModel)]="selectedTable.section" />
+          <input [(ngModel)]="selectedTable.capacity" />
+        </div>
+      </div>
+      <button class="button btn-secondary" (click)="saveTable()">Save Details</button>
+    </div>
+  </div>
+</div>

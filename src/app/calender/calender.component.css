@@ -1,0 +1,6 @@
+table { border-collapse: collapse; }
+tr { border: none; }
+td, th {
+  border-right: solid 2px rgb(248, 186, 71); 
+  border-left: solid 2px rgb(248, 186, 71);
+}
