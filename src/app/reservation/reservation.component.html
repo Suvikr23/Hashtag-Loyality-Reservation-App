@@ -44,37 +44,48 @@
         <div class="row">
           <div class="col-md-6 mb-3">
             <label for="validationCustom01">Customer Name</label>
-            <input type="text" class="form-control" id="validationCustom01" placeholder="Full name" required>
+            <input type="text" class="form-control" [ngModel]="customerName" id="validationCustom01" placeholder="Full name" required>
           </div>
           <div class="col-md-6 mb-3">
             <label for="validationCustom01">Customer Mobile</label>
-            <input type="text" class="form-control" id="validationCustom01" placeholder="Mobile" required>
+            <input type="text" class="form-control" [ngModel]="customerMobile" id="validationCustom01" placeholder="Mobile" required>
           </div>
         </div>
         <div class="row">
           <div class="col-md-6 mb-3">
             <label for="validationCustom03">Customer Email</label>
-            <input type="email" class="form-control" id="validationCustom03" placeholder="Email">
+            <input type="email" class="form-control" [ngModel]="customerEmail" id="validationCustom03" placeholder="Email">
             <div class="invalid-feedback">
               Please provide a valid email id.
             </div>
           </div>
           <div class="col-md-3 mb-3">
             <label for="validationCustom04">Table No.</label>
-            <input type="text" class="form-control" id="validationCustom04" placeholder="Table No." required>
+            <input type="text" class="form-control" [ngModel]="tableNum" id="validationCustom04" placeholder="Table No." required>
             <div class="invalid-feedback">
               Please provide a Table No.
             </div>
           </div>
           <div class="col-md-3 mb-3">
             <label for="validationCustom05">No. Of Guests</label>
-            <input type="text" class="form-control" id="validationCustom05" placeholder="Guest Count" required>
+            <input type="text" class="form-control" [ngModel]="guestCount" id="validationCustom05" placeholder="Guest Count" required>
             <div class="invalid-feedback">
               Please provide a Guest count.
             </div>
           </div>
         </div>
-        <button class="btn btn-primary" type="submit">Add Reservation</button>
+        <div class="row">
+          <div class="col-12">
+            <input [ngModel]="tags" id="tags" type="text" value="Birthday, Anniversary, A la carte / Buffet, Zomato / Dineout, 
+                Outside Requested, Indoor Requested, Window Requested, Smoking Area" data-role="tagsinput" />
+          </div>
+        </div>
+
+        <tags-input class="form-control input-lg" (onTagsChanged)="onTagsChanged($event)" [removeLastOnBackspace]="removeLastOnBackspace"
+          [(ngModel)]="tags" name="tags"></tags-input>
+
+
+        <button class="btn btn-primary" type="submit" (click)="addReservation()">Add Reservation</button>
       </form>
     </div>
   </div>

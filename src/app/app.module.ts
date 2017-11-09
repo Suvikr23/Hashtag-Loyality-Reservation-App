@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DateTimePickerModule } from 'ng-pick-datetime';
 // import datetimepicker from 'eonasdan-bootstrap-datetimepicker';
 import { DateTimePickerDirective } from 'ng2-eonasdan-datetimepicker/src/datetimepicker.directive';
+import { TagsInputModule } from 'ngx-tags-input/dist';
 // import { MdCardModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -42,6 +43,7 @@ const appRoutes: Routes = [
       appRoutes,
       { enableTracing: false } // <-- debugging purposes only
     ),
+    TagsInputModule.forRoot(),
     BrowserModule,
     RouterModule,
     FormsModule,
