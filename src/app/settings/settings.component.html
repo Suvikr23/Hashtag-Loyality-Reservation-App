@@ -6,12 +6,13 @@
           (click)="showTableDetails($event, table)">
           Table {{table.tableNumber}}
           <span class="badge badge-secondary"> 2 - {{table.capacity}}</span>
+          <span class="badge badge-secondary"> {{table.section}} </span>
       </ul>
     </div>
     <div *ngIf="!isEditView" class="col-9">
-      <input [(ngModel)]="newTableNum" placeholder="Table No."/>
-      <input [(ngModel)]="newTableSec" placeholder="Section"/>
-      <input [(ngModel)]="newTableCap" placeholder="Table Capacity"/>
+      <input [(ngModel)]="newTableNum" placeholder="Table No." />
+      <input [(ngModel)]="newTableSec" placeholder="Section" />
+      <input [(ngModel)]="newTableCap" placeholder="Table Capacity" />
       <button class="button btn-secondary" (click)="addTable(newTableNum, newTableSec, newTableCap)">
         Add Table
       </button>

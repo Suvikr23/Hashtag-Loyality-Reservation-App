@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <div class="display-4">Reservation Details</div>
+      <div class="display-4">Book Reservation</div>
       <div class="form-check form-check-inline">
         <label class="form-check-label">
           <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Walk in
@@ -18,17 +18,43 @@
         </label>
       </div>
 
+      <div class="container">
+        <div class="row">
+          <div class='col-sm-6'>
+            <div class="form-group">
+              <div class='input-group date' id='datetimepicker1'>
+                <input type='text' class="form-control" a2e-datetimepicker [date]="date" [options]="a2eOptions" (onChange)="dateChange($event)"
+                  (onClick)="dateClick()" />
+                <span class="input-group-addon">
+                  <span class="fa fa-calendar"></span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <script type="text/javascript">
+            $(function () {
+              $('#datetimepicker1').datetimepicker();
+            });
+          </script>
+        </div>
+      </div>
+
+
       <form class="container" id="needs-validation" novalidate>
         <div class="row">
           <div class="col-md-6 mb-3">
             <label for="validationCustom01">Customer Name</label>
-            <input type="text" class="form-control" id="validationCustom01" placeholder="First name" required>
+            <input type="text" class="form-control" id="validationCustom01" placeholder="Full name" required>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="validationCustom01">Customer Mobile</label>
+            <input type="text" class="form-control" id="validationCustom01" placeholder="Mobile" required>
           </div>
         </div>
         <div class="row">
           <div class="col-md-6 mb-3">
             <label for="validationCustom03">Customer Email</label>
-            <input type="text" class="form-control" id="validationCustom03" placeholder="Email" required>
+            <input type="email" class="form-control" id="validationCustom03" placeholder="Email">
             <div class="invalid-feedback">
               Please provide a valid email id.
             </div>
@@ -44,11 +70,11 @@
             <label for="validationCustom05">No. Of Guests</label>
             <input type="text" class="form-control" id="validationCustom05" placeholder="Guest Count" required>
             <div class="invalid-feedback">
-              Please provide a valid zip.
+              Please provide a Guest count.
             </div>
           </div>
         </div>
-        <button class="btn btn-primary" type="submit">Submit form</button>
+        <button class="btn btn-primary" type="submit">Add Reservation</button>
       </form>
     </div>
   </div>

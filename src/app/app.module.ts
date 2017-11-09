@@ -5,6 +5,9 @@ import { HttpModule} from '@angular/http';
 import { FormsModule } from '@angular/forms';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DateTimePickerModule } from 'ng-pick-datetime';
+// import datetimepicker from 'eonasdan-bootstrap-datetimepicker';
+import { DateTimePickerDirective } from 'ng2-eonasdan-datetimepicker/src/datetimepicker.directive';
 // import { MdCardModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -31,7 +34,8 @@ const appRoutes: Routes = [
     AppComponent,
     ReservationComponent,
     CalenderComponent,
-    SettingsComponent
+    SettingsComponent,
+    DateTimePickerDirective
   ],
   imports: [
     RouterModule.forRoot(
@@ -41,7 +45,8 @@ const appRoutes: Routes = [
     BrowserModule,
     RouterModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    DateTimePickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
