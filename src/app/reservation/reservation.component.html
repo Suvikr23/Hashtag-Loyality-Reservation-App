@@ -80,11 +80,6 @@
                 Outside Requested, Indoor Requested, Window Requested, Smoking Area" data-role="tagsinput" />
           </div>
         </div>
-
-        <tags-input class="form-control input-lg" (onTagsChanged)="onTagsChanged($event)" [removeLastOnBackspace]="removeLastOnBackspace"
-          [(ngModel)]="tags" name="tags"></tags-input>
-
-
         <button class="btn btn-primary" type="submit" (click)="addReservation()">Add Reservation</button>
       </form>
     </div>
